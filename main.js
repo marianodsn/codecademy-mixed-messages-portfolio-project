@@ -34,4 +34,16 @@ let formatSneakerSelect = (selection) => {
     console.log(formatted)
 }
 
-formatSneakerSelect(sneakerSelection); 
+const sneakerAsciiArt = `                                
+                                                         888                             
+                                                         888                             
+                                                         888                             
+                         .d8888b 88888b.  .d88b.  8888b. 888  888 .d88b. 888d888.d8888b  
+                         88K     888 "88bd8P  Y8b    "88b888 .88Pd8P  Y8b888P"  88K      
+                         "Y8888b.888  88888888888.d888888888888K 88888888888    "Y8888b. 
+                              X88888  888Y8b.    888  888888 "88bY8b.    888         X88 
+                          88888P'888  888 "Y8888 "Y888888888  888 "Y8888 888     88888P'
+                          `
+
+console.log(sneakerAsciiArt);
+formatSneakerSelect(sneakerSelection);
