@@ -1,5 +1,5 @@
 // generates a random number between 0 -> 4
-const generateRandomNumber = () => Math.floor(Math.random() * 5);
+const generateRandomNumber = (num) => Math.floor(Math.random() * 5);
 
 // create an object for sneaker combination options
 const sneakerOptions = {
@@ -11,22 +11,27 @@ const sneakerOptions = {
 // create array that will be used to display the message to user
 let sneakerSelection = []; 
 
-// save index selector for object iteration
-const indexSelect = generateRandomNumber()
-
 // iterate over the sneakerOptions object
 for (let prop in sneakerOptions) {
+    let indexSelect = generateRandomNumber(sneakerOptions[prop].length); 
     switch (prop) {
         case 'sneakerStyle':
-            sneakerSelection.push(`You should wear your ${sneakerOptions.prop[indexSelect]} `);
+            sneakerSelection.push(`You should wear your ${sneakerOptions[prop][indexSelect]}.`);
             break;
         case 'occasion':
-            sneakerSelection.push(`They are a pretty good selection for a ${sneakerOptions.prop[indexSelect]} `);
+            sneakerSelection.push(`They are a pretty good selection for a ${sneakerOptions[prop][indexSelect]}.`);
             break;
         case 'sneakerPurpose':
-            sneakerSelection.push(`The also  ${sneakerOptions.prop[indexSelect]} `);
+            sneakerSelection.push(`They might be a good choice ${sneakerOptions[prop][indexSelect]}.`);
             break;
         default: 
             sneakerSelection.push('There is not enough information.')
     }
 }
+
+let formatSneakerSelect = (selection) => {
+    const formatted = sneakerSelection.join('\n')
+    console.log(formatted)
+}
+
+formatSneakerSelect(sneakerSelection); 
